@@ -1,0 +1,89 @@
+
+=title($fz, $lh, $color: #676767, $fw:normal)
+	font-size: $fz
+	font-weight: $fw
+	line-height: $lh
+	color: $color
+=triangle($width, $color)
+	border: none
+	border-top: $width solid $color
+=rect($width, $height, $bg-color)
+	width: $width
+	height: $height
+	background-color: $bg-color
+=shadow($shadow)
+	-webkit-box-shadow: $shadow
+	-moz-box-shadow: $shadow
+	box-shadow: $shadow
+=rotate($deg)
+	-ms-transform: rotate($deg+deg)
+	-moz-transform: rotate($deg+deg)
+	-o-transform: rotate($deg+deg)
+	-webkit-transform: rotate($deg+deg)
+	transform: rotate($deg+deg)
+=pos($left, $top, $right: 0, $bottom: 0)
+	content: ""
+	position: absolute
+	left: $left
+	top: $top
+	right: $right
+	bottom: $bottom
+
+*
+	box-sizing: border-box
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	position: relative
+	padding: 0
+	margin: 0 0 30px 0
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,4000,7001,300&display=swap')
+
+body
+	font-family: 'Roboto', sans-serif
+	font-weight: 400
+	font-size: 18px
+	line-height: 24px
+	color: #888888
+	word-break: break-all
+
+img
+	width: 100%
+	height: auto
+ul li, ol li 
+	margin-bottom: 0
+
+ul li:before
+	content: ""
+	vertical-align: baseline
+	display: inline-block
+	margin-right: 10px
+	+rect(10px, 10px, #84AEFF)
+	+rotate(45)
+ol 
+	counter-reset: num
+	& li:before
+		counter-increment: num
+		content: counter(num)
+		display: inline-block
+		margin-right: 10px
+		margin-left: 20px
+		color: #84AEFF
+.text-center
+	text-align: center
+h1 
+	+title(30px, 35px)
+h2
+	+title(22px, 26px)
+h3
+	+title(20px, 23px, $fw:bold)
+.sec-title
+	padding-left: 30px
+	+title(25px, 29px, $fw:300)
+	&:before
+		+pos(0, 10px)
+	&:after
+		+pos(5px, 18px)
+	&:before, &:after
+		+rect(12px, 8px, #FFD584)
+
