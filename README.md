@@ -1,2 +1,2 @@
-# Landing
+# Landing Page
 `HTML`, `SaSS`
