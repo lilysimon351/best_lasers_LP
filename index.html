@@ -5,8 +5,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Лендинг</title>
 	<link rel="stylesheet" href="css/app.css">
+	<script src="yt.js" defer></script>
 </head>
 <body>
+	<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+	<div id="player"></div>
+
+	<script>
+	  // 2. This code loads the IFrame Player API code asynchronously.
+	  var tag = document.createElement('script');
+
+	  tag.src = "https://www.youtube.com/iframe_api";
+	  var firstScriptTag = document.getElementsByTagName('script')[0];
+	  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	  
+	</script>
 	<div class="site-wr overflow-hidden">
 		<div class="w-c-94 d-flex overflow-hidden top-imgs img-wr">
 			<div class="top-imgs__decor-1"></div>
@@ -220,7 +233,7 @@
 			</section>
 			<section>
 				<div class="w-c-75 blue-filled-bg">Рекомендуем выбирать оборудование из списка моделей, обзор которых представлен в этом разделе.</div>
-				<div class="devi-">
+				<div class="device">
 					<h2 class="w-c-75">Lutronic Advantage Power Plus™</h2>
 					<div class="w-c-75 device-images lutronic-imgs">
 						<img src="img/lutronic-1.png" alt="Lutronic Advantage Power Plus">
@@ -249,8 +262,8 @@
 						<p>Аппарат работает в режиме коротких и длинных импульсов, длительность которых регулируется. Контактное охлаждение эпидермиса во время процедуры защищает пациента от болезненных ощущений. Дискомфорт возможен при эпиляции насадкой 10×30 мм в деликатных зонах: подмышечные впадины, область бикини.
 						</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Lutronic Advantage — мощный лазер для эпиляции с большим рабочим пятном, регулируемой длиной импульса и контактным охлаждением эпидермиса. Для достижения результата достаточно 3-5 процедур. </p>
 							<b>Другие достоинства аппарата:</b>
@@ -262,8 +275,11 @@
      						<p>Однако этот аппарат не работает в режиме динамического удаления волос SHR, как более современные диодные лазеры. Эпиляция, несмотря на контактное охлаждение, вызывает дискомфорт в деликатных зонах. При этом цена на Lutronic Advantage выше, чем на более технологичные полупроводниковые модели.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/NvSIcp4SUTo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="NvSIcp4SUTo"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -306,7 +322,7 @@
 							<div class="manufacturer-info"><span class="grey">Адрес:</span>  123557, г. Москва, ул. Пресненский Вал, д. 14, корп. 2</div>
 						</div>
 					</div>
-				</w-c-75 div>
+				</div>
 				<div class="device">
 					<h2 class="w-c-75">Palomar Vectus™</h2>
 					<div class="w-c-75 device-images palomar-imgs">
@@ -342,8 +358,12 @@
      						<p>Palomar Vectus, как и корейский Lutronic Advantage, работает в режиме эпиляции методом «штампа». Процедуры на нём эффективны, но болезненны для пациентов с чувствительной кожей. Цена аппарата составляет около 3 млн.₽, при этом он не относится к современным лазерным системам.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/WFuvUSiA66E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="WFuvUSiA66E"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -392,7 +412,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="devi-">
+				<div class="device">
 					<h2 class="w-c-75">Capello™</h2>
 					<div class="w-c-75 device-images capello-imgs">
 						<img src="img/CapelloLaser-1.png" alt="Capello">
@@ -433,15 +453,18 @@
 						</ul>
 						<p>В таблице приведены характеристики аппарата CAPELLO Luxe. На нём, кроме эпиляции, доступна функция неабляционного лазерного омоложения.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Диодный лазер Capello — современный аппарат, который поддерживает динамический режим удаления волос. Такая эпиляция проводится быстрее и безопаснее для пациента. Важным достоинством оборудования является гарантия в 24 месяца — мало, кто из производителей настолько уверен в своих лазерах.</p>
      						<p>Недостатки аппарата: одно рабочее пятно и средний по мощности излучатель. К тому же, Capello — оборудование российской сборки по цене немногим ниже европейских лазеров.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/VWXFF6q-Zzo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="VWXFF6q-Zzo"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -487,8 +510,8 @@
 							<div class="manufacturer-info"><span class="grey">Адрес:</span>г. Москва, Комсомольский пр., 41, ком. 7.</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">In Motion D1</h2>
 					<div class="w-c-75 device-images motion-d1-imgs">
 						<img src="img/In-Motion-D1-1.png" alt="In Motion D1">
@@ -526,15 +549,18 @@
 							<li> «умная» система охлаждения, которая работает тем активнее, чем дольше эксплуатируется аппарат.</li>
 						</ul>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Производитель In Motion D1 проводит грамотную маркетинговую политику: бесплатная доставка, гарантия 2 года и обучение при приобретении оборудования. Покупатели отмечают, что можно заказать индивидуальный дизайн корпуса аппарата в фирменных цветах. Диодный лазер In Motion D1 доступен в России и разрешён к применению Росздравнадзором. Пациенты отмечают комфортность эпиляции этим лазером.</p>
      						<p>Заявленный производителем ресурс излучателя в 30 млн. вспышек является сомнительным преимуществом — эксперты считают, что это лишь рекламный ход. Обратите внимание, что аппарат In Motion D1 продаётся по цене более 1 млн.₽ — его стоимость сопоставима с оригинальными премиальными моделями, которым он уступает по рабочим параметрам.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/qb3GuED3sUk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="qb3GuED3sUk"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -580,8 +606,8 @@
 							<div class="manufacturer-info"><span class="grey">Адрес: </span>г Москва, Щелковское Шоссе, 5, стр. 1, ПО «Сокол»</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">In Motion D2</h2>
 					<div class="w-c-75 device-images motion-d2-imgs">
 						<img src="img/inmotion_d_2-1.png" alt="In Motion D2">
@@ -614,15 +640,18 @@
 						<p>Диодный лазер In Motion D2 представляет собой компактную модификацию аппарата In Motion D1, с меньшим по мощности излучателем. Он не поддерживает функцию лазерного омоложения и используется для эпиляции в 2-х режимах: методом «штампа» и SHR.
 						</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>In Motion D2 — компактный и доступный лазер с выгодными условиями приобретения. Его можно рекомендовать для небольших салонов красоты и частных косметологов. Чудес в удалении волос он не покажет и для длительной эксплуатации не подойдёт, но клиенты будут довольны результатами и комфортностью процедур.</p>
      						<p>Недостаток аппарата — средние рабочие параметры.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/W7UGjH6rbBk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="W7UGjH6rbBk"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -668,8 +697,8 @@
 							<div class="manufacturer-info"><span class="grey">Адрес: </span>г Москва, Щелковское Шоссе, 5, стр. 1, ПО «Сокол»</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">LightSheer DESIRE TM</h2>
 					<div class="w-c-75 device-images lightSheer-imgs">
 						<div class="lightSheer__decor-img"></div>
@@ -718,14 +747,17 @@
 					<div class="w-c-75">
 						<p>Диодный лазер LightSheer DUET — ещё один аппарат от транснациональной компании Lumenis. Он отличается от своего собрата LightSheer DESIRE рабочей длиной волны в 800 нм и наличием 2-х, а не 3-х рукояток.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Аппарат имеет 2 насадки оптимального размера, для работы на больших участках тела и деликатных зон. LightSheer DUET — премиальный аппарат высокого качества, с такой же космической ценой. Технология вакуумного усиления увеличивает больше стоимость оборудования, чем эффективность процедуры.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/sk2Qn7JEw7A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="sk2Qn7JEw7A"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -771,8 +803,8 @@
 							<div class="manufacturer-info"><span class="grey">Адрес: </span>г. Москва, пр-т Маршала Жукова, д. 51.</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Magic One</h2>
 					<div class="w-c-75 device-images magic-one-imgs">
 						<img src="img/magic-one-1.png" alt="Magic One">
@@ -812,15 +844,18 @@
 						</ol>
 						<p>Универсальная модификация совместима с любым излучателем из линейки, что позволяет в дальнейшем менять конфигурацию, но стоит в 1,5 раза дороже.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Диодные лазеры MAGIC ONE — стандартные аппараты для эпиляции в 2-х режимах: классическом и динамическом. Использование вертикальных диодных матриц позволяет равномерно нагревать насадку и увеличивает срок службы оборудования — производитель заявляет бесперебойную работу в течение 5-7 лет. Это сомнительное утверждение, т. к. есть отзывы покупателей о том, что манипула выходит из строя через 8 месяцев из-за отсутствия в аппаратах системы фильтрации воды.</p>
      						<p>Продавец оборудования MAGIC ONE обещает выгодные условия покупки: гарантия до полутора лет, бесплатные обучение и доставку. Однако производитель заработал себе плохую репутацию на косметологическом рынке из-за недобросовестных методов конкуренции и плохой сервисной поддержки. К тому же, цена диодных лазеров MAGIC ONE явно превышает их рабочие параметры.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/hsagaVPXxFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="hsagaVPXxFE"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -866,8 +901,8 @@
 							<div class="manufacturer-info"><span class="grey">Адрес: </span>Россия, г. Дзержинск, Игумновское шоссе, 11Д.</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Ruikd Lamis XL</h2>
 					<div class="w-c-75 device-images ruikd-imgs">
 						<img src="img/ruikd-1.png" alt="Ruikd Lamis XL">
@@ -902,15 +937,18 @@
 						</p>
 						<p>Пациенты и косметологи одинаково высоко оценивают Lamis XL, отмечая его эффективность, комфортность процедур и долговечность оборудования.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Эксперты считают, что Ruikd Lamis XL — идеальный и эффективный лазер для эпиляции. Отрицательных отзывов на оригинальный аппарат не встречается. Оборудование долговечно и быстро окупается благодаря адекватной цене и популярности процедур.</p>
      						<p>Недостаток этого лазера в том, что его подделывают и копируют. Недобросовестные салоны обещают «корейскую эпиляцию Ruikd», оказывая услуги на китайских аппаратах.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/2mB0XZnMII8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="2mB0XZnMII8"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -967,8 +1005,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Vikini ILOODA</h2>
 					<div class="w-c-75 device-images vikini-imgs">
 						<img src="img/vikini-1.png" alt="Vikini ILOODA">
@@ -1002,15 +1040,18 @@
 					<div class="w-c-75">
 						<p>Диодный лазер Vikini от корейской корпорации ILOODA работает в 3-х режимах эпиляции, которые отличаются скоростью подачи и продолжительностью импульса. Он удаляет даже тонкие волоски, с которыми не справляются другие аппараты. Технология Wave обеспечивает стабильный флюенс в каждом импульсе, без «падения» энергии во время процедуры. Контактная система охлаждения делает процедуру безболезненной для пациента.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Манипула Vikini оснащена коллимированной линзой, которая снижает рассеивание энергии в верхних слоях эпидермиса. В сочетании со способностью излучателя генерировать короткие, длинные и смешанные импульсы с частотой до 10 Гц это увеличивает результативность удаления волос.</p>
      						<p>Недостатки аппарата: одно рабочее пятно, средняя мощность и цена почти в 3 млн.₽.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/KU7emZCwCZw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="KU7emZCwCZw"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1067,8 +1108,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Mediostar Next Pro</h2>
 					<div class="w-c-75 device-images mediostar-imgs">
 						<img src="img/mediostar_next_pro.png" alt="Mediostar Next Pro">
@@ -1105,15 +1146,18 @@
 						</ul>
 						<p>Дополнительно аппарат, даже в базовой комплектации, имеет функции лазерного омоложения, удаления пигментации, сосудистых патологий и лечения угревой сыпи.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Особенность Mediostar Next Pro — двойной импульс 810 + 940 нм и возможность подачи подимпульсов, одиночных вспышек и непрерывных лучей. Такая технология увеличивает результативность воздействия на волосяной фолликул и одновременно предотвращает травмирование соседних тканей — продолжительность нагрева не превышает время тепловой релаксации. Запатентованная система охлаждения насадки дополнительно защищает кожу и гарантирует безболезненность процедур.</p>
      						<p>Производитель, компания Asclepion Laser Technologies, финансирует специальные испытания аппарата на безопасность в клиниках и институтах. Это эффективный и современный европейский лазер. Наверное, этим и объясняется цена Mediostar Next Pro в несколько десятков тысяч евро. Для клиники в российском городе это оборудование — неоправданно дорогое приобретение, т. к. результаты на нём не отличаются от процедур на корейских аппаратах.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/qjwESaFoQqI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="qjwESaFoQqI"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1168,8 +1212,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Motus AX Moveo</h2>
 					<div class="w-c-75 device-images motus-imgs">
 						<img src="img/motus-1.png" alt="Motus AX Moveo">
@@ -1201,15 +1245,18 @@
 					<div class="w-c-75">
 						<p>Аппарат Motus AX Moveo от итальянской компании DEKA — первый александритовый лазер, который работает по технологии динамической эпиляции; прочие модели поддерживают только метод «штампа». Поэтому он безопасен для смуглой и загорелой кожи и разрешён для удаления волос на I-V фототипах круглый год.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Motus AX Moveo сочетает результативность александритового лазера с безопасностью и скоростью диодных аппаратов. Процедура эпиляции длится, от 25 сек на лице, до 10 минут на бёдрах. Гарантированный результат достигается за 6-8 сеансов, в зависимости от индивидуальных особенностей пациента.</p>
      						<p>Этот уникальный аппарат для эпиляции стоит от 80 тыс.€. Космическая цена — его главный недостаток.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/FPViYTLA-6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="FPViYTLA-6Q"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1266,8 +1313,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Soprano XL</h2>
 					<div class="w-c-75 device-images soprano-imgs">
 						<img src="img/sopranoice-1.png" alt="Soprano XL">
@@ -1302,15 +1349,18 @@
 						<p>Аппарат Soprano Xl появился на рынке в 2009 году. Это первый полноценный гибридный лазер для эпиляции — он оснащён александритовой рукояткой Alex. В комплект также входит газоразрядная лампа NIR для проведения термолифтинга.</p>
 						<p>Производители аппарата сделали ставку на безопасность и комфортность процедур. В Soprano Xl впервые были реализованы технологии SHR и In-motion — удаление волос «в движении», при низком потоке энергии и высокой частоте. Контактное охлаждение сапфировым наконечником ICE® обеспечивает комфорт процедуры. Пациенты отмечают, что сеанс эпиляции Soprano проходит без боли.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Основное достоинство лазера Soprano Xl — безболезненность процедур. Кроме того, аппарат имеет насадки с рабочими пятнами разного размера, что подходит для работы на различных участках тела. Наконечник 6 мм удобен в удалении волос на переносице, в носу, в области бровей, ушей и т. п.</p>
      						<p>При всех достоинствах аппарата, его излучатель имеет среднюю мощность, что снижает результативность процедур. Не все пациенты готовы проходить больше 6 сеансов лазерной эпиляции, даже при отсутствии болевых ощущений.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/y6u3xZSvB2s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="y6u3xZSvB2s"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1367,7 +1417,7 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
+				</div>
 				<div class="device">
 					<h2 class="w-c-75">Cynosure PicoSure</h2>
 					<div class="device-images picoSure-imgs">
@@ -1410,8 +1460,11 @@
 							<p>Cynosure PicoSure — самый современный лазер из представленных в обзоре. Если вы готовы заплатить почти 10 млн.₽ за космические технологии для красоты — это ваш выбор.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/U-Ty5fkMZD8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="U-Ty5fkMZD8"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1506,8 +1559,11 @@
 							<p>Эпиляция на Candela GentleLase Pro-U — быстрый способ избавиться от волос, но пациенты отмечают болезненность процедур. Производитель попытался обеспечить анестезирующий эффект при помощи двойного охлаждения кожи: воздушной струёй и впрыском хладагента, но такое сочетание имеет побочный эффект. На коже с загаром оно приводит к нарушению пигментации. Отличный, эффективный лазер для эпиляции.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/CKTGwfAMnKQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="CKTGwfAMnKQ"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1563,7 +1619,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="devi-">
+				<div class="device">
 					<h2 class="w-c-75">Pacer One</h2>
 					<div class="device-images pacer-one-imgs">
 						<img src="img/pacer-one-1.png" alt="Pacer One">
@@ -1597,14 +1653,17 @@
 						<p>Диодный лазер Pacer One — компактный недорогой аппарат для профессиональной эпиляции. Производит оборудование китайская компания MBT—Laser, которая известна своей приверженностью к гибридным моделям с 3-мя волнами. Источник излучения при этом один — полупроводники.</p>
 						<p>Этот средний по мощности аппарат поддерживает динамический и классический режимы удаления волос и способен работать без перерыва до 14-ти часов. Он подойдёт для небольших салонов красоты и частных косметологов. Покупатели и потребители хорошо отзываются об эпиляции Pacer One.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Pacer One — достойный аппарат для эпиляции по доступной цене. Однако его применение в профессиональных целях на территории России запрещено — аппарат не зарегистрирован в Росздравнадзоре. Распространение в салонах это оборудование получило до того, как Верховный Суд РФ окончательно признал лазерную эпиляцию медицинской услугой. На момент написания обзора, оформляется РУ на данную модель лазера.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/W7cBo4p_o4k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="W7cBo4p_o4k"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1660,8 +1719,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Pacer One Pro</h2>
 					<div class="w-c-75 device-images pacer-one-pro-imgs">
 						<img src="img/pacer-one-pro-1.png" alt="Pacer One Pro">
@@ -1694,14 +1753,17 @@
 					<div class="w-c-75">
 						<p>Pacer One Pro — «старший брат» аппарата Pacer One. Он отличается большим по мощности излучателем и размерами. Модель выпущена на рынок в 2019 году и позиционируется как усовершенствованный вариант Honor Ice. Аппараты действительно имеют похожий дизайн, но предшественник зарегистрирован в Росздравнадзоре как медицинское изделие, а Pacer One Pro пока нет.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Pacer One Pro обладает возможностями профессионального диодного лазера для эпиляции и, при этом, доступен по цене. Но из-за отсутствия РУ его применение в салонах связано с рисками привлечения к ответственности владельцев.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/jwxZJppp7WQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="jwxZJppp7WQ"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1757,8 +1819,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">HONOR ICE</h2>
 					<div class="w-c-75 device-images honor-ice-imgs">
 						<img src="img/honor-ice-1.png" alt="HONOR ICE">
@@ -1795,15 +1857,18 @@
 						<p>Диодный гибрид HONOR ICE МВТ зарекомендовал себя в российских косметологических салонах как надёжный работоспособный аппарат для эпиляции. Он удаляет волосы контактным способом, методом SHR и HR, а также поддерживает функцию неабляционного лазерного омоложения.</p>
 						<p>Модель выпускается в 2-х вариантах: стационарном и компактном. Менее габаритный аппарат имеет меньший по мощности лазерный излучатель — 500 Вт.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Преимущества модели HONOR ICE: распространённость в России, удобство управления и настроек и выгодные условия приобретения. Аппарат имеет РУ и может использоваться для профессиональных процедур.</p>
 							<p>Вместе с тем, этот диодный лазер уступает корейским моделям по рабочим характеристикам, но по стоимости сопоставим с ними.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/4E6SruIvRlY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="4E6SruIvRlY"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1858,8 +1923,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Kiers Kes 144</h2>
 					<div class="w-c-75 device-images kiers-kes-imgs">
 						<img src="img/kiers-kes-1.png" alt="Kiers Kes 144">
@@ -1893,14 +1958,17 @@
 					<div class="w-c-75">
 						<p>Диодный лазер Kiers Kes 144 — китайский аналог премиальных полупроводниковых аппаратов. Процедура удаления волос проходит быстро благодаря динамическому режиму и безболезненно для пациента. Аппарат работает бесшумно и не создаёт неудобств в эксплуатации.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Аппарат Kiers Kes 144 хорошо зарекомендовал себя у косметологов и пациентов до того, как открылась охота на незарегистрированные лазеры для эпиляции. Он доступен по цене, эффективен в работе и не требует расходных материалов. Недостаток модели — отсутствие РУ.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/ilO3d444CE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="ilO3d444CE0"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -1955,8 +2023,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Kiers Kes 145</h2>
 					<div class="w-c-75 device-images kiers-kes-145-imgs">
 						<img src="img/kiers-kes-145-1.png" alt="Kiers Kes 145">
@@ -1992,14 +2060,17 @@
 					<div class="w-c-75">
 						<p>Аппарат Kiers Kes 145 заявлен производителем как доступный аналог израильского лазера LightSheer DUET. Изготовитель взял за основу собственный хороший прибор Kiers Kes 144, увеличил мощность излучателя и добавил манипулу с вакуумным усилением. Цена оборудования выросла более, чем в 2 раза, что слабо отразилось на результативности процедур.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Аппарат Kiers Kes 145 способен длительное время работать без перегрева благодаря фреонному охлаждению сапфировой призмы. Это современный диодный лазер с профессиональными характеристиками, но платить за оборудование без РУ более полутора миллионов рублей не имеет смысла.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/Njus3eYlGKc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="Njus3eYlGKc"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -2054,8 +2125,8 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
-				<div class="devi-">
+				</div>
+				<div class="device">
 					<h2 class="w-c-75">Wingderm</h2>
 					<div class="w-c-75 device-images windgerm-imgs">
 						<img src="img/windgerm-1.png" alt="Wingderm">
@@ -2093,8 +2164,8 @@
 							<br>
 						Эпиляция проводится в 2-х режимах: методом «штампа» и динамическом. Косметолог сам выбирает вариант работы — для новичков, по заданным протоколам, или профессиональный, с возможностью регулирования настроек.</p>
 						</div>
-						<div>
-							<div class="w-c--75 w-c-75 pluses-minuses">
+					<div>
+						<div class="w-c-75 pluses-minuses">
 							<div class="small-title">Плюсы и минусы аппарата</div>
 							<p>Основное достоинство модели Wingderm — безопасность:</p>
 							<ol>
@@ -2105,8 +2176,11 @@
 							<p>Вместе с тем, аппарат не зарегистрирован Росздравнадзором, что ограничивает его применение. К тому же это не самый результативный прибор для эпиляции — эффект достигается за 6-10 процедур.</p>
 						</div>
 					</div>
-					<div class="iframe-wr w-c-94">
-						<iframe src="https://www.youtube.com/embed/XBCnTFF1aBE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+					
+					<div class="w-c-94">
+						<div class="youtube" data-embed="XBCnTFF1aBE"> 
+						    <div class="play-button"></div> 
+						</div>
 					</div>
 					<div class="w-c-94 more-info d-flex">
 						<div class="rating">
@@ -2161,7 +2235,7 @@
 							</div>
 						</div>
 					</div>
-				</w-c-75 div>
+				</div>
 			</section>
 			<section class="w-c-75">
 				<h2 class="sec-title">Лучшие аппараты для лазерной эпиляции</h2>
@@ -2194,8 +2268,11 @@
 					</ol>
 					<p>Отличить фотоэпилятор от лазерного аппарата можно по параметрам длины волны в технической документации и внешнему виду рабочего пятна — оно больше.</p>
 				</div>
-				<div class="iframe-wr w-c-94">
-					<iframe src="https://www.youtube.com/embed/DctoON5a-2A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+				
+				<div class="w-c-94">
+					<div class="youtube" data-embed="DctoON5a-2A"> 
+					    <div class="play-button"></div> 
+					</div>
 				</div>
 			</section>
 			<section>
