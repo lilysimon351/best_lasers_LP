@@ -1,23 +1,26 @@
 @font-face {
   font-family: "Roboto";
-  src: url("fonts/Roboto-Light.woff") format("woff");
-  src: url("fonts/Roboto-Light.woff2") format("woff2");
+  src: url("../fonts/Roboto-Light.woff") format("woff");
+  src: url("../fonts/Roboto-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("fonts/Roboto-Regular.woff") format("woff");
-  src: url("fonts/Roboto-Regular.woff2") format("woff2");
+  src: url("../fonts/Roboto-Regular.woff") format("woff");
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("fonts/Roboto-Bold.woff") format("woff");
-  src: url("fonts/Roboto-Bold.woff2") format("woff2");
+  src: url("../fonts/Roboto-Bold.woff") format("woff");
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -347,7 +350,7 @@ h2 {
 
 .top-imgs {
   height: 340px;
-  background: url(../img/top-bg-1.jpg) left center no-repeat;
+  background: url(../img/top-bg-2.jpg) left center no-repeat;
   background-size: cover;
   margin-bottom: 30px;
 }
