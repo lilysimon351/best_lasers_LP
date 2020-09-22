@@ -886,58 +886,55 @@ footer a {
 
 /* youtube iframe styles */
 .youtube {
-  background-color: #000;
+  background: #000 url("data:image/gifbase64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==") center no-repeat;
+  background-size: cover;
   margin-bottom: 30px;
   position: relative;
   padding-top: 56.25%;
   overflow: hidden;
   cursor: pointer;
 }
-
-.youtube img {
+.youtube:before {
   width: 100%;
-  top: -16.84%;
+  height: 100%;
+  background-color: #fff;
+  content: "";
+  position: absolute;
   left: 0;
+  top: 0;
+  z-index: 3;
   opacity: 0.7;
+  background-color: #000;
 }
 
 .play-button {
   width: 70px;
   height: 50px;
+  background-color: #fff;
   background-color: #212121;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   z-index: 1;
   opacity: 0.8;
   border-radius: 6px;
-  -o-transition: background-color 0.1s ease, opacity 0.1s ease;
-  -moz-transition: background-color 0.1s ease, opacity 0.1s ease;
-  -webkit-transition: background-color 0.1s ease, opacity 0.1s ease;
-  transition: background-color 0.1s ease, opacity 0.1s ease;
+  -o-transition: background-color 350ms ease-in, opacity 350ms ease-in;
+  -moz-transition: background-color 350ms ease-in, opacity 350ms ease-in;
+  -webkit-transition: background-color 350ms ease-in, opacity 350ms ease-in;
+  transition: background-color 350ms ease-in, opacity 350ms ease-in;
 }
-
 .play-button:before {
   content: "";
   border-style: solid;
   border-width: 10px 0 10px 20px;
   border-color: transparent transparent transparent #fff;
-}
-
-.youtube img,
-.play-button {
   cursor: pointer;
 }
 
-.youtube img,
-.youtube iframe,
 .play-button,
 .play-button:before {
+  content: "";
   position: absolute;
-}
-
-.play-button,
-.play-button:before {
-  top: 50%;
   left: 50%;
+  top: 50%;
+  z-index: 3;
   -ms-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -946,10 +943,14 @@ footer a {
 }
 
 .youtube iframe {
-  height: 100%;
   width: 100%;
-  top: 0;
+  height: 100%;
+  background-color: #fff;
+  content: "";
+  position: absolute;
   left: 0;
+  top: 0;
+  z-index: 3;
 }
 
 .youtube:hover .play-button {
