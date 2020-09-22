@@ -6,19 +6,17 @@ if (document.readyState == "loading") {
 
 	// youtube image insertion
 	var youtube = document.querySelectorAll(".youtube");
+	
 	// loop
-	// 
+ 
 	for (var i = 0; i < youtube.length; i++) {
 		// thumbnail image source.
 		var source = "https://img.youtube.com/vi/" + youtube[i].getAttribute('data-embed') + "/hqdefault.jpg";
-		// Load the image asynchronously
-		var image = new Image();
-		image.setAttribute("data-src",source);
-		image.classList.add("b-lazy")
-		image.src = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
-		image.addEventListener("load", function() {
-			youtube[i].appendChild(image);
-		}(i));
+		
+		// Load the image 
+		youtube[i].setAttribute("data-src",source);
+		youtube[i].classList.add("b-lazy");
+		
 		// show video on click
 		youtube[i].addEventListener("click", function() {
 			var iframe = document.createElement("iframe");
@@ -29,7 +27,7 @@ if (document.readyState == "loading") {
 			this.appendChild(iframe);
 		});
 	}
-	
+
 	// image lazy load
 	var bLazy = new Blazy();
 }
