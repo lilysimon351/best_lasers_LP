@@ -230,27 +230,6 @@ h2 {
   margin-right: auto;
 }
 
-.iframe-wr {
-  min-height: 462px;
-  position: relative;
-  display: block;
-  max-width: 100%;
-  padding: 0;
-  overflow: hidden;
-  padding-top: 34.25%;
-  margin-bottom: 30px;
-}
-
-.iframe-wr iframe {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
 .grey {
   color: #8E8E8E;
 }
@@ -435,9 +414,20 @@ h2 {
 }
 
 .rc-block {
-  background: #222222 url(../img/papers.png) right bottom no-repeat;
   padding: 60px 30px 30px 100px;
-  background-size: contain;
+  background: #222222;
+}
+.rc-block:before {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  background: url(../img/papers.png) right -100px no-repeat;
+  background-size: 100%;
 }
 
 .rc-block .big-title, .laser-block .big-title {
@@ -894,6 +884,93 @@ footer a {
   font-size: 40px;
 }
 
+/* youtube iframe styles */
+.youtube {
+  background-color: #000;
+  margin-bottom: 30px;
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.youtube img {
+  width: 100%;
+  top: -16.84%;
+  left: 0;
+  opacity: 0.7;
+}
+
+.play-button {
+  width: 70px;
+  height: 50px;
+  background-color: #212121;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 6px;
+  -o-transition: background-color 0.1s ease, opacity 0.1s ease;
+  -moz-transition: background-color 0.1s ease, opacity 0.1s ease;
+  -webkit-transition: background-color 0.1s ease, opacity 0.1s ease;
+  transition: background-color 0.1s ease, opacity 0.1s ease;
+}
+
+.play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.youtube img,
+.play-button {
+  cursor: pointer;
+}
+
+.youtube img,
+.youtube iframe,
+.play-button,
+.play-button:before {
+  position: absolute;
+}
+
+.play-button,
+.play-button:before {
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.youtube iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.youtube:hover .play-button {
+  background-color: #f00;
+  opacity: 1;
+}
+
+/* image lazy load */
+.b-lazy {
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
+
+.b-lazy.b-loaded {
+  opacity: 1;
+}
+
 @media screen and (min-width: 701px) {
   footer img {
     content: "";
@@ -990,6 +1067,22 @@ footer a {
 
   .rc-block {
     padding-left: 30px;
+  }
+  .rc-block:before {
+    background-position: right -85px;
+    background-size: 770px;
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    left: -90px;
+    top: 20%;
+  }
+
+  .rc-decor-2 {
+    left: 35%;
+    top: 69%;
   }
 
   .spec-item {
@@ -1090,73 +1183,6 @@ footer a {
     font-size: 30px;
     line-height: 40px;
   }
-}
-/* youtube iframe styles */
-.youtube {
-  background-color: #000;
-  margin-bottom: 30px;
-  position: relative;
-  padding-top: 56.25%;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.youtube img {
-  width: 100%;
-  top: -16.84%;
-  left: 0;
-  opacity: 0.7;
-}
-
-.youtube .play-button {
-  width: 70px;
-  height: 50px;
-  background-color: #212121;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-  z-index: 1;
-  opacity: 0.8;
-  border-radius: 6px;
-  -moz-transition: background-color 0.1s ease, opacity 0.1s ease;
-  -webkit-transition: background-color 0.1s ease, opacity 0.1s ease;
-  transition: background-color 0.1s ease, opacity 0.1s ease;
-}
-
-.youtube .play-button:before {
-  content: "";
-  border-style: solid;
-  border-width: 10px 0 10px 20px;
-  border-color: transparent transparent transparent #fff;
-}
-
-.youtube img,
-.youtube .play-button {
-  cursor: pointer;
-}
-
-.youtube img,
-.youtube iframe,
-.youtube .play-button,
-.youtube .play-button:before {
-  position: absolute;
-}
-
-.youtube .play-button,
-.youtube .play-button:before {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.youtube iframe {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.youtube:hover .play-button {
-  background-color: #f00;
-  opacity: 1;
 }
 
 /*# sourceMappingURL=app.css.map */
