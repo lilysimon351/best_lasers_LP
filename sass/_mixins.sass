@@ -1,0 +1,60 @@
+=title($fz, $lh, $color: #676767, $fw:normal)
+	font-size: $fz
+	font-weight: $fw
+	line-height: $lh
+	color: $color
+	margin-bottom: 30px
+=triangle($fz, $color, $t-sh)
+	width: 0
+	height: 0
+	font-size: $fz
+	color: $color
+	text-shadow: $t-sh
+	+origin
+=rect($width, $height, $bg-color: #fff)
+	width: $width
+	height: $height
+	background-color: $bg-color
+=shadow($shadow)
+	-webkit-box-shadow: $shadow
+	-moz-box-shadow: $shadow
+	box-shadow: $shadow
+=rotate($deg)
+	-ms-transform: rotate($deg)
+	-moz-transform: rotate($deg)
+	-o-transform: rotate($deg)
+	-webkit-transform: rotate($deg)
+	transform: rotate($deg)
+=origin($val: right top)
+	-webkit-transform-origin: $val
+	-moz-transform-origin: $val
+	-o-transform-origin: $val
+	-ms-transform-origin: $val
+	transform-origin: $val
+=pos($left, $top)
+	content: ""
+	position: absolute
+	left: $left
+	top: $top
+	z-index: 3
+=bg-full($color)
+	+pos(-50%, 0)
+	+rect(200%, 100%, $color)
+	z-index: -1
+=d-flex
+	display: -webkit-box
+	display: -ms-flexbox
+	display: flex
+=align-center
+	-webkit-box-align: center
+	-ms-flex-align: center
+	align-items: center
+=flex-column
+	-webkit-box-orient: vertical
+	-webkit-box-direction: normal
+	-ms-flex-direction: column
+	flex-direction: column
+=center-block
+	display: block
+	margin-left: auto
+	margin-right: auto
