@@ -9,4 +9,3 @@ Visit the [website](https://lazertop.ru/)
 - `JS`
 - `Figma`
 - `Lazy Loading`
-____
